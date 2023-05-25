@@ -1,0 +1,348 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Reset CSS */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+    overflow-wrap: break-word;
+}
+
+img, video, canvas, svg{
+    display: block;
+    max-width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* Global CSS Styling */
+:root{
+    /* Primary */
+    --Very-Dark-Blue: hsl(243, 87%, 12%);
+    --Desaturated-Blue: hsl(238, 22%, 44%);
+    --white: hsl(0, 0, 100%);
+    --pale-white: hsl(0, 0, 75%);
+
+
+    /* Accent */
+    --Bright-Blue: hsl(224, 93%, 58%);
+    --Moderate-Cyan: hsl(170, 45%, 43%);
+
+    /* Neutral */
+    --Light-Grayish-Blue: hsl(240, 75%, 98%);
+    --Light-Gray: hsl(0, 0%, 75%);
+    
+    /* Fonts */
+    --ff-open-sans: 'Open Sans', sans-serif; /* Headings, Call-to-actions, Header Navigation */
+    --ff-raleway: 'Raleway', sans-serif; /* Body */
+    
+    --content-padding: 2rem;
+    --content-gap: 2rem;
+}
+
+input, button{
+    border-radius: 0.3rem;
+    outline: none;
+}
+
+input{
+    padding: 0.8rem;
+    border: 2px solid var(--Light-Gray);
+}
+
+::placeholder{
+    opacity: 50%;
+}
+
+.button{
+    padding: 0.8rem;
+    border: none;
+    color: var(--Light-Grayish-Blue);
+    background: var(--Bright-Blue);
+    cursor: pointer;
+}
+
+.invalid-email{
+    font-size: 0.8rem;
+}
+
+.hero{
+    color: brown;
+}
+
+.access{
+    color: var(--Light-Gray);
+}
+
+h1, h2{
+    font-family: var(--ff-open-sans);
+}
+
+body{
+    font-family: var(--ff-raleway);
+}
+
+.container{
+    padding: var(--content-padding);
+}
+
+/* Header Styling */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header > img{
+    width: 90px;    
+}
+
+.navigation-links > ul{
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+@media(min-width:700px){
+    .navigation-links > ul{
+        font-size: 1.3rem;
+    }
+}
+
+/* Hero Section styling */
+.image-text__description{
+    display: grid;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.div{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    font-weight: 700;
+}
+
+.emailButton{
+   /*  margin-top: 2rem; */
+    display: grid;
+    gap: 1rem;
+}
+
+.invalid-email{
+    display: none;
+}
+
+@media (min-width: 700px){
+    .image-text__description{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .div{
+        /* margin-top: 3rem; */
+        justify-content: center;
+        align-items: center;
+        order: -1;
+        width: 80%;
+        text-align: left;
+        gap: 1rem;
+    }
+
+    .emailButton{
+        margin-top: -3rem;
+        width: 100%;
+        display: flex;
+    }
+}
+
+/* Productive */
+#productive{
+    display: grid;
+    gap: var(--content-gap);
+    margin-top: 1.5rem;
+    background-image: url("./images/bg-curve-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
+}
+
+.link{
+    color: var(--Moderate-Cyan);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.stay-productive{
+    display: grid;
+    gap: 2rem;
+}
+
+a.link::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    width: 60%;
+    height: 1px;
+    background-color: var(--Moderate-Cyan);
+}
+
+.access__productive{
+    font-size: 1rem;
+    text-align: center;
+}
+
+.card{
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    padding: var(--content-padding);
+
+    background-color: white;
+    box-shadow: 0px 0px 5px black;
+}
+
+.founder{
+    display: flex;
+    gap: 1rem;
+}
+
+.founder > img{
+    border-radius: 50%;
+    width: 20%;
+}
+
+@media(min-width: 700px){
+    #productive{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 5rem;
+        background-image: url("./images/bg-curve-desktop.svg");
+    }
+
+    .stay-productive{
+        order: -1;
+    }
+
+    .access__productive{
+        font-size: 2rem;
+    }
+
+    .card{
+        width: 50%;
+    }
+
+ 
+}
+
+/* Access */
+#access{
+    background-color: var(--Desaturated-Blue);
+    padding: var(--content-padding);
+    color: white;
+    text-align: center;
+    display: grid;
+    gap: var(--content-gap);
+    margin-top: 4rem;
+}
+
+@media(min-width:700px){
+    #access{
+        grid-template-columns: repeat(2, 1fr);
+        text-align: unset;
+    }
+
+    .emailButton2{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .emailButton2 > .button{
+        width: 50%;
+    }
+}
+
+/* Footer */
+footer{
+    background-color: var(--Very-Dark-Blue);
+    color: white;
+    padding: 2rem;
+}
+
+.footer-container{
+    display: grid;
+    gap: 2rem;
+
+}
+
+.footer-container > div{
+    display: grid;
+    gap: 2rem;
+}
+
+.footer-container > div > ul{
+    display: grid;
+    gap: 1rem;
+}
+
+.phone-email{
+    display: grid;
+    gap: 1rem;
+}
+
+.footer-container > div > ul > li > a{
+    color: white;
+}
+
+.socialMediaLinks{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.socialMediaLinks > a > i{
+    color: white;
+    font-size: 2rem;
+}
+
+@media(min-width: 680px){
+    .footer-container > div > img{
+        width: 100px;
+    }
+
+
+    .footer-container{
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+    }
+
+    .socialMediaLinks > a > li{
+        margin-top: 4rem;
+    }
+}
